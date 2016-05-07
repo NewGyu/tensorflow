@@ -10,27 +10,27 @@ RUN apt-get update && apt-get install -y \
         libpng12-dev \
         libzmq3-dev \
         pkg-config \
-        python-numpy \
-        python-pip \
-        python-scipy \
+        python3-numpy \
+        python3-pip \
+        python3-scipy \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
+    python3 get-pip.py && \
     rm get-pip.py
 
-RUN pip --no-cache-dir install \
+RUN pip3 --no-cache-dir install \
         ipykernel \
         jupyter \
         matplotlib \
         && \
-    python -m ipykernel.kernelspec
+    python3 -m ipykernel.kernelspec
 
 # Install TensorFlow CPU version.
 ENV TENSORFLOW_VERSION 0.8.0
-RUN pip --no-cache-dir install \
+RUN pip3 --no-cache-dir install \
     http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
 
 # Set up our notebook config.

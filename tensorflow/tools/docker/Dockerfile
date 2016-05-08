@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 
 MAINTAINER Craig Citro <craigcitro@google.com>
+MAINTAINER NewGyu <newgyu@kinoboku.net>
 
 # Pick up some TF dependencies
 RUN apt-get update && apt-get install -y \
@@ -13,6 +14,7 @@ RUN apt-get update && apt-get install -y \
         python3-numpy \
         python3-pip \
         python3-scipy \
+        language-pack-ja \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -49,5 +51,7 @@ EXPOSE 6006
 EXPOSE 8888
 
 WORKDIR "/notebooks"
+
+ENV LANG=ja_JP.UTF-8
 
 CMD ["/run_jupyter.sh"]

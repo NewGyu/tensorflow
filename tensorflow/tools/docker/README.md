@@ -1,3 +1,9 @@
+# What is this?
+
+これは`gcr.io/tensorflow/tensorflow`がPython2.7ベースになっているのが嫌でPython3系でtensorflowを動かすようにしたものです。
+ついでに`language-pack-ja`も入れるようにしました。
+
+
 # Using TensorFlow via Docker
 
 This directory contains `Dockerfile`s to make it easy to get up and running with

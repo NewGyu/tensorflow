@@ -31,8 +31,7 @@ RUN pip3 --no-cache-dir install \
 # Install TensorFlow CPU version.
 ENV TENSORFLOW_VERSION 0.8.0
 RUN pip3 --no-cache-dir install \
-    http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
-
+    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp34-cp34m-linux_x86_64.whl
 # Set up our notebook config.
 COPY jupyter_notebook_config.py /root/.jupyter/
 
